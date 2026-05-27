@@ -94,12 +94,12 @@ function initImageSkeletons() {
   });
 })();
 
-/* ===== Spotlight Search ===== */
+/* ===== Spotlight Search (macOS window) ===== */
 (function () {
-  const overlay = document.getElementById('spotlight');
+  const win = document.getElementById('win-spotlight');
   const input = document.getElementById('spotlightInput');
   const results = document.getElementById('spotlightResults');
-  if (!overlay || !input || !results) return;
+  if (!win || !input || !results) return;
 
   const APPS = [
     { type: 'app', id: 'about', label: 'About Me', icon: '👤' },
@@ -136,11 +136,15 @@ function initImageSkeletons() {
     renderList();
   }
 
+  function close() {
+    if (typeof closeWindow === 'function') closeWindow('spotlight');
+  }
+
   function run(item) {
     close();
     if (item.type === 'app') {
-      if (typeof toggleWindow === 'function') toggleWindow(item.id);
-      else if (typeof openWindow === 'function') openWindow(item.id);
+      if (typeof openWindow === 'function') openWindow(item.id);
+      else if (typeof toggleWindow === 'function') toggleWindow(item.id);
     } else if (item.id === 'theme') {
       document.getElementById('themeToggle')?.click();
     } else if (item.id === 'restart') {
@@ -153,21 +157,17 @@ function initImageSkeletons() {
   }
 
   function open() {
-    overlay.classList.add('open');
-    overlay.setAttribute('aria-hidden', 'false');
     input.value = '';
     filter('');
-    setTimeout(() => input.focus(), 50);
-    UISound.click();
-  }
-
-  function close() {
-    overlay.classList.remove('open');
-    overlay.setAttribute('aria-hidden', 'true');
+    if (typeof openWindow === 'function') openWindow('spotlight');
+    else if (typeof toggleWindow === 'function') toggleWindow('spotlight');
+    setTimeout(() => input.focus(), 120);
   }
 
   window.openSpotlight = open;
   window.closeSpotlight = close;
+
+  renderList();
 
   input.addEventListener('input', () => filter(input.value));
 
@@ -184,8 +184,6 @@ function initImageSkeletons() {
     const item = filtered.find((_, i) => results.querySelectorAll('.spotlight-item')[i] === btn);
     if (item) run(item);
   });
-
-  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
 })();
 
 /* ===== Keyboard Shortcuts ===== */
@@ -203,8 +201,8 @@ function initImageSkeletons() {
     }
 
     if (e.key === 'Escape') {
-      if (document.getElementById('spotlight')?.classList.contains('open')) {
-        window.closeSpotlight?.();
+      if (document.getElementById('win-spotlight')?.classList.contains('open')) {
+        closeWindow('spotlight');
       } else if (focusedApp) {
         closeWindow(focusedApp);
       }

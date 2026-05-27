@@ -88,8 +88,8 @@ function focusWindow(app) {
   });
 
   const menuApp = document.querySelector('.menu-active-app');
-  const titleKeys = { about: 'aboutMe', projects: 'projects', skills: 'skills', certificates: 'certificates', blog: 'blog', contact: 'contact', terminal: 'terminal' };
-  const titleFallback = { about: 'About Me', projects: 'Projects', skills: 'Skills', certificates: 'Certificates', blog: 'Blog', contact: 'Contact', terminal: 'Terminal' };
+  const titleKeys = { about: 'aboutMe', projects: 'projects', skills: 'skills', certificates: 'certificates', blog: 'blog', contact: 'contact', terminal: 'terminal', spotlight: 'spotlight' };
+  const titleFallback = { about: 'About Me', projects: 'Projects', skills: 'Skills', certificates: 'Certificates', blog: 'Blog', contact: 'Contact', terminal: 'Terminal', spotlight: 'Spotlight Search' };
   if (menuApp) menuApp.textContent = typeof t === 'function' ? t(titleKeys[app] || 'finder') : (titleFallback[app] || 'Finder');
 }
 
@@ -106,6 +106,9 @@ function openWindow(app) {
 
   if (app === 'terminal') {
     setTimeout(() => document.getElementById('terminalInput')?.focus(), 100);
+  }
+  if (app === 'spotlight') {
+    setTimeout(() => document.getElementById('spotlightInput')?.focus(), 100);
   }
 }
 

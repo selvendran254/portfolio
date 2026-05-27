@@ -2,6 +2,7 @@ const I18N = {
   en: {
     aboutMe: 'About Me', projects: 'Projects', skills: 'Skills', certificates: 'Certificates',
     contact: 'Contact', terminal: 'Terminal', blog: 'Blog', resume: 'Resume',
+    spotlight: 'Spotlight Search',
     finder: 'Finder', aboutThisMac: 'About This Mac', restart: 'Restart',
     letsWork: "Let's work together", contactSub: 'Have a project in mind? Feel free to reach out anytime.',
     sendMessage: 'Send Message', yourName: 'Your Name', yourEmail: 'Your Email', yourMessage: 'Your Message',
@@ -20,6 +21,7 @@ const I18N = {
   ta: {
     aboutMe: 'என்னைப் பற்றி', projects: 'திட்டங்கள்', skills: 'திறன்கள்', certificates: 'சான்றிதழ்கள்',
     contact: 'தொடர்பு', terminal: 'டர்மினல்', blog: 'வலைப்பதிவு', resume: 'ரெசுமே',
+    spotlight: 'தேடல்',
     finder: 'Finder', aboutThisMac: 'About This Mac', restart: 'Restart',
     letsWork: 'ஒன்றாக வேலை செய்வோம்', contactSub: 'திட்டம் இருக்கா? எப்போது வேண்டுமானாலும் தொடர்பு கொள்ளுங்கள்.',
     sendMessage: 'செய்தி அனுப்பு', yourName: 'உங்கள் பெயர்', yourEmail: 'உங்கள் மின்னஞ்சல்', yourMessage: 'உங்கள் செய்தி',
