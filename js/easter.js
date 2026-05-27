@@ -235,3 +235,5 @@ window.startTerminalSnake = function () {
     layer.appendChild(col);
   }
 })();
+
+window.TERMINAL_EASTER = TERMINAL_EASTER;

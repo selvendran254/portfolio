@@ -279,8 +279,19 @@ function initImageSkeletons() {
 
 /* ===== PWA ===== */
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  window.addEventListener('load', async () => {
+    try {
+      const reg = await navigator.serviceWorker.register('./sw.js');
+      if (reg.waiting) reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+      reg.addEventListener('updatefound', () => {
+        const worker = reg.installing;
+        worker?.addEventListener('statechange', () => {
+          if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+            worker.postMessage({ type: 'SKIP_WAITING' });
+          }
+        });
+      });
+    } catch (_) {}
   });
 }
 

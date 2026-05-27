@@ -536,6 +536,9 @@ LinkedIn: linkedin.com/in/selvendran-p`;
   };
 
   if (typeof TERMINAL_EASTER !== 'undefined') Object.assign(commands, TERMINAL_EASTER);
+  if (window.TERMINAL_EASTER) Object.assign(commands, window.TERMINAL_EASTER);
+
+  const CMD_ALIASES = { coesay: 'cowsay', neofetech: 'neofetch' };
 
   function print(text, cls = 'out') {
     const line = document.createElement('div');
@@ -553,8 +556,10 @@ LinkedIn: linkedin.com/in/selvendran-p`;
     print(`<span class="cmd">selvendran@portfolio ~ % ${trimmed}</span>`, 'cmd');
 
     const parts = trimmed.split(/\s+/);
-    const command = parts[0].toLowerCase();
+    let command = parts[0].toLowerCase();
     const arg = parts.slice(1).join(' ');
+
+    if (CMD_ALIASES[command]) command = CMD_ALIASES[command];
 
     if (command === 'clear') {
       output.innerHTML = '';
@@ -597,8 +602,8 @@ LinkedIn: linkedin.com/in/selvendran-p`;
     }
   }
 
-  print('Welcome to Selvendran Portfolio Terminal v1.0', 'info');
-  print('Type <span class="cmd">help</span> to see available commands.', 'out');
+  print('Welcome to Selvendran Portfolio Terminal v1.1', 'info');
+  print('Type <span class="cmd">help</span> for commands · try <span class="cmd">neofetch</span> or <span class="cmd">snake</span>', 'out');
 
   input.addEventListener('keydown', e => {
     if (window.terminalGameHandler && e.key.length === 1) {
