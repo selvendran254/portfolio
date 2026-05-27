@@ -6,6 +6,8 @@
   <title>Selvendran Palanisamy | Portfolio</title>
   <meta name="description" content="macOS-themed portfolio of Selvendran Palanisamy — Embedded Systems & IoT Developer" />
   <meta name="theme-color" content="#1a1a2e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="author" content="Selvendran Palanisamy" />
   <link rel="canonical" href="https://selvendran254.github.io/portfolio/" />
   <meta property="og:type" content="website" />
@@ -18,6 +20,8 @@
   <meta name="twitter:description" content="Embedded Systems & IoT Developer — projects, skills, certificates & contact." />
   <meta name="twitter:image" content="https://selvendran254.github.io/portfolio/assets/selvendran.jpg" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/selvendran.jpg" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -42,14 +46,22 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
         <nav class="menu-items">
-          <button class="menu-item" data-open="about">About Me</button>
-          <button class="menu-item" data-open="projects">Projects</button>
-          <button class="menu-item" data-open="skills">Skills</button>
-          <button class="menu-item" data-open="certificates">Certificates</button>
-          <button class="menu-item" data-open="contact">Contact</button>
+          <button class="menu-item" data-open="about" data-i18n="aboutMe">About Me</button>
+          <button class="menu-item" data-open="projects" data-i18n="projects">Projects</button>
+          <button class="menu-item" data-open="skills" data-i18n="skills">Skills</button>
+          <button class="menu-item" data-open="certificates" data-i18n="certificates">Certificates</button>
+          <button class="menu-item" data-open="blog" data-i18n="blog">Blog</button>
+          <button class="menu-item" data-open="contact" data-i18n="contact">Contact</button>
         </nav>
       </div>
       <div class="menu-right">
+        <button class="menu-status menu-text-btn" id="langToggle" aria-label="Switch language">தமிழ்</button>
+        <button class="menu-status" id="soundToggle" aria-label="Toggle sounds" aria-pressed="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        </button>
+        <button class="menu-status" id="spotlightBtn" aria-label="Spotlight search (Ctrl+K)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
         <button class="menu-status" id="themeToggle" aria-label="Toggle theme">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -63,18 +75,35 @@
         <span class="menu-status" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2"/></svg>
         </span>
+        <span class="menu-status visitor-count" title="Total visitors">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span id="visitorCount">—</span>
+        </span>
         <span class="menu-clock" id="menuClock"></span>
       </div>
     </header>
 
     <!-- Mobile Nav -->
     <div class="dropdown mobile-nav" id="mobileNav">
-      <button data-open="about">About Me</button>
-      <button data-open="projects">Projects</button>
-      <button data-open="skills">Skills</button>
-      <button data-open="certificates">Certificates</button>
-      <button data-open="contact">Contact</button>
-      <button data-open="terminal">Terminal</button>
+      <button data-open="about" data-i18n="aboutMe">About Me</button>
+      <button data-open="projects" data-i18n="projects">Projects</button>
+      <button data-open="skills" data-i18n="skills">Skills</button>
+      <button data-open="certificates" data-i18n="certificates">Certificates</button>
+      <button data-open="contact" data-i18n="contact">Contact</button>
+      <button data-open="blog" data-i18n="blog">Blog</button>
+      <button data-open="terminal" data-i18n="terminal">Terminal</button>
+    </div>
+
+    <!-- Spotlight Search -->
+    <div class="spotlight-overlay" id="spotlight" aria-hidden="true">
+      <div class="spotlight-panel" role="dialog" aria-label="Spotlight Search">
+        <div class="spotlight-input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="spotlightInput" data-i18n-placeholder="spotlightPh" placeholder="Search apps, blog, commands..." autocomplete="off" spellcheck="false" />
+          <kbd>Ctrl K</kbd>
+        </div>
+        <div class="spotlight-results" id="spotlightResults"></div>
+      </div>
     </div>
 
     <!-- Apple Dropdown -->
@@ -138,6 +167,10 @@
       <button class="desktop-icon" data-open="contact">
         <span class="icon-box green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
         <span class="icon-label">Contact</span>
+      </button>
+      <button class="desktop-icon" data-open="blog">
+        <span class="icon-box teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+        <span class="icon-label" data-i18n="blog">Blog</span>
       </button>
       <button class="desktop-icon" data-open="terminal">
         <span class="icon-box purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></span>
@@ -247,7 +280,7 @@
           </div>
           <div class="projects-grid">
             <a href="https://github.com/selvendran254/Smart-Home-Automation-Using-IoT" target="_blank" rel="noopener noreferrer" class="project-item">
-              <div class="project-img">
+              <div class="project-img img-wrap">
                 <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop&q=80" alt="Smart Home Automation Using IoT" loading="lazy" />
               </div>
               <div class="project-meta">
@@ -256,7 +289,7 @@
               </div>
             </a>
             <a href="https://github.com/selvendran254/-Cell-Phone-Controlled-Robotic-Vehicle" target="_blank" rel="noopener noreferrer" class="project-item">
-              <div class="project-img">
+              <div class="project-img img-wrap">
                 <img src="https://images.unsplash.com/photo-1581092160562-40aa08f7881a?w=600&h=400&fit=crop&q=80" alt="Cell Phone Controlled Robotic Vehicle" loading="lazy" />
               </div>
               <div class="project-meta">
@@ -265,7 +298,7 @@
               </div>
             </a>
             <a href="https://github.com/selvendran254/Library-Automation-Using-RFID" target="_blank" rel="noopener noreferrer" class="project-item">
-              <div class="project-img">
+              <div class="project-img img-wrap">
                 <img src="https://images.unsplash.com/photo-1507842217343-583bb7270aa7?w=600&h=400&fit=crop&q=80" alt="Library Automation Using RFID" loading="lazy" />
               </div>
               <div class="project-meta">
@@ -274,7 +307,7 @@
               </div>
             </a>
             <a href="https://github.com/selvendran254/smart-home" target="_blank" rel="noopener noreferrer" class="project-item">
-              <div class="project-img">
+              <div class="project-img img-wrap">
                 <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&q=80" alt="Smart Home Web Dashboard" loading="lazy" />
               </div>
               <div class="project-meta">
@@ -373,6 +406,22 @@
         </div>
       </div>
 
+      <!-- Blog Window -->
+      <div class="window" id="win-blog" data-app="blog" style="--wx:48%;--wy:52%;--ww:680px">
+        <div class="win-header" data-drag>
+          <div class="traffic-lights">
+            <button class="tl red" data-action="close"></button>
+            <button class="tl yellow" data-action="minimize"></button>
+            <button class="tl green" data-action="maximize"></button>
+          </div>
+          <span class="win-title" data-i18n="blog">Blog</span>
+        </div>
+        <div class="win-body blog-body">
+          <div class="blog-list" id="blogList"></div>
+          <div class="blog-detail" id="blogDetail" hidden></div>
+        </div>
+      </div>
+
       <!-- Contact Window -->
       <div class="window" id="win-contact" data-app="contact" style="--wx:50%;--wy:54%;--ww:660px">
         <div class="win-header" data-drag>
@@ -381,12 +430,12 @@
             <button class="tl yellow" data-action="minimize"></button>
             <button class="tl green" data-action="maximize"></button>
           </div>
-          <span class="win-title">Contact</span>
+          <span class="win-title" data-i18n="contact">Contact</span>
         </div>
         <div class="win-body contact-body">
           <div class="contact-left">
-            <h3>Let's work together</h3>
-            <p>Have a project in mind? Feel free to reach out anytime.</p>
+            <h3 data-i18n="letsWork">Let's work together</h3>
+            <p data-i18n="contactSub">Have a project in mind? Feel free to reach out anytime.</p>
             <div class="contact-links">
               <a href="mailto:selvendranapalanisamy@gmail.com">✉ selvendranapalanisamy@gmail.com</a>
               <a href="tel:+919025773867">📞 +91 9025773867</a>
@@ -399,12 +448,12 @@
             </div>
           </div>
           <form id="contactForm" class="contact-form" novalidate>
-            <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
-            <input type="email" name="email" placeholder="Your Email" required autocomplete="email" />
-            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <input type="text" name="name" data-i18n-placeholder="yourName" placeholder="Your Name" required autocomplete="name" />
+            <input type="email" name="email" data-i18n-placeholder="yourEmail" placeholder="Your Email" required autocomplete="email" />
+            <textarea name="message" rows="4" data-i18n-placeholder="yourMessage" placeholder="Your Message" required></textarea>
             <input type="checkbox" name="botcheck" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            <button type="submit" class="btn-send" id="formSubmitBtn">Send Message</button>
+            <button type="submit" class="btn-send" id="formSubmitBtn" data-i18n="sendMessage">Send Message</button>
           </form>
         </div>
       </div>
@@ -452,8 +501,12 @@
         <span class="dock-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
         <span class="dock-dot"></span>
       </button>
-      <button class="dock-app" data-open="terminal" data-label="Terminal" aria-label="Terminal">
+      <button class="dock-app" data-open="terminal" data-label="Terminal" data-i18n-label="terminal" aria-label="Terminal">
         <span class="dock-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></span>
+        <span class="dock-dot"></span>
+      </button>
+      <button class="dock-app" data-open="blog" data-label="Blog" data-i18n-label="blog" aria-label="Blog">
+        <span class="dock-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
         <span class="dock-dot"></span>
       </button>
       <a class="dock-app" href="assets/selvendran.pdf" download="Selvendran_Palanisamy_Resume.pdf" data-label="Resume" aria-label="Resume">
@@ -473,7 +526,10 @@
   </div>
 
   <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/blog.js"></script>
   <script src="js/certificates.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/features.js"></script>
 </body>
 </html>

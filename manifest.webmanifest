@@ -1,0 +1,24 @@
+{
+  "name": "Selvendran Palanisamy — Portfolio",
+  "short_name": "Selvendran",
+  "description": "Embedded Systems & IoT Developer Portfolio",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/selvendran.jpg",
+      "sizes": "200x200",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -88,8 +88,9 @@ function focusWindow(app) {
   });
 
   const menuApp = document.querySelector('.menu-active-app');
-  const titles = { about: 'About Me', projects: 'Projects', skills: 'Skills', certificates: 'Certificates', contact: 'Contact', terminal: 'Terminal' };
-  if (menuApp) menuApp.textContent = titles[app] || 'Finder';
+  const titleKeys = { about: 'aboutMe', projects: 'projects', skills: 'skills', certificates: 'certificates', blog: 'blog', contact: 'contact', terminal: 'terminal' };
+  const titleFallback = { about: 'About Me', projects: 'Projects', skills: 'Skills', certificates: 'Certificates', blog: 'Blog', contact: 'Contact', terminal: 'Terminal' };
+  if (menuApp) menuApp.textContent = typeof t === 'function' ? t(titleKeys[app] || 'finder') : (titleFallback[app] || 'Finder');
 }
 
 function openWindow(app) {
@@ -477,7 +478,8 @@ if (localStorage.getItem('theme') === 'dark') {
   ls        — List desktop apps
   clear     — Clear terminal
   sudo      — Try it 😉
-  open      — Usage: open [about|projects|skills|certificates|contact]
+  open      — Usage: open [about|projects|skills|certificates|blog|contact]
+  blog      — Open blog window
   certificates — Show certificate summary`;
     },
     about() {
@@ -512,8 +514,12 @@ GitHub: github.com/selvendran254
 LinkedIn: linkedin.com/in/selvendran-p`;
     },
     whoami() { return 'selvendran — Embedded Systems & IoT Developer'; },
-    ls() { return 'About Me  Projects  Skills  Contact  Terminal  Resume'; },
-    sudo() { return 'Nice try! 😄 You already have full access to this portfolio.'; }
+    ls() { return 'About Me  Projects  Skills  Certificates  Blog  Contact  Terminal  Resume'; },
+    sudo() { return 'Nice try! 😄 You already have full access to this portfolio.'; },
+    blog() {
+      openWindow('blog');
+      return 'Opening blog window...';
+    }
   };
 
   function print(text, cls = 'out') {
@@ -543,7 +549,7 @@ LinkedIn: linkedin.com/in/selvendran-p`;
     }
 
     if (command === 'open' && arg) {
-      if (['about', 'projects', 'skills', 'certificates', 'contact', 'terminal'].includes(arg)) {
+      if (['about', 'projects', 'skills', 'certificates', 'blog', 'contact', 'terminal'].includes(arg)) {
         openWindow(arg);
         print(`Opening ${arg}...`, 'info');
       } else {
