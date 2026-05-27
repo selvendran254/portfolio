@@ -18,25 +18,16 @@ Open: http://localhost:8080
 
 ## Deploy to GitHub Pages (Free)
 
-### Step 1 — Create GitHub repo
-
-1. Go to [github.com/new](https://github.com/new)
-2. Repository name: `portfolio` (or `selvendran254.github.io` for main site URL)
-3. Public repo → Create
-
-### Step 2 — Push code
+### Step 1 — Push code
 
 ```bash
 cd /home/dell/Documents/profile
-git init
 git add .
-git commit -m "Add glassmorphism portfolio"
-git branch -M main
-git remote add origin https://github.com/selvendran254/portfolio.git
-git push -u origin main
+git commit -m "Your message"
+git push origin main
 ```
 
-### Step 3 — Enable GitHub Pages
+### Step 2 — Enable GitHub Pages
 
 1. Repo → **Settings** → **Pages**
 2. **Source:** GitHub Actions
@@ -49,15 +40,23 @@ git push -u origin main
 | `portfolio` | https://selvendran254.github.io/portfolio/ |
 | `selvendran254.github.io` | https://selvendran254.github.io/ |
 
+## Contact Form
+
+Messages are sent via [FormSubmit](https://formsubmit.co) to `selvendranapalanisamy@gmail.com`.  
+First submission triggers a one-time email confirmation — click the link to activate.
+
 ## Project Structure
 
 ```
 profile/
 ├── index.html
 ├── css/style.css
-├── js/main.js
+├── js/
+│   ├── main.js
+│   └── certificates.js
 ├── assets/
 │   ├── favicon.svg
+│   ├── og-image.svg
 │   └── selvendran.pdf
 └── .github/workflows/deploy.yml
 ```

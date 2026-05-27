@@ -2,297 +2,477 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selvendran Palanisamy | Embedded Systems & IoT Developer</title>
-  <meta name="description" content="Portfolio of Selvendran Palanisamy — Embedded Systems & IoT Developer from Dindigul, Tamil Nadu." />
-  <meta name="theme-color" content="#121212" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Selvendran Palanisamy | Portfolio</title>
+  <meta name="description" content="macOS-themed portfolio of Selvendran Palanisamy — Embedded Systems & IoT Developer" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <meta name="author" content="Selvendran Palanisamy" />
+  <link rel="canonical" href="https://selvendran254.github.io/portfolio/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Selvendran Palanisamy | Portfolio" />
+  <meta property="og:description" content="Embedded Systems & IoT Developer — projects, skills, certificates & contact." />
+  <meta property="og:url" content="https://selvendran254.github.io/portfolio/" />
+  <meta property="og:image" content="https://selvendran254.github.io/portfolio/assets/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Selvendran Palanisamy | Portfolio" />
+  <meta name="twitter:description" content="Embedded Systems & IoT Developer — projects, skills, certificates & contact." />
+  <meta name="twitter:image" content="https://selvendran254.github.io/portfolio/assets/og-image.svg" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="scroll-progress" aria-hidden="true"></div>
-
-  <!-- Header -->
-  <header class="header" id="header">
-    <div class="container header-inner">
-      <a href="#home" class="logo">Selvendra</a>
-      <nav class="nav" id="nav">
-        <a href="#home" class="nav-link active" data-section="home">Home</a>
-        <a href="#services" class="nav-link" data-section="services">Services</a>
-        <a href="#about" class="nav-link" data-section="about">About</a>
-        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
-      </nav>
-      <div class="header-actions">
-        <a href="#contact" class="btn-talk">Let's Talk</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <!-- Boot Screen -->
+  <div class="boot-screen" id="bootScreen">
+    <svg class="boot-apple" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    <div class="boot-bar"><div class="boot-progress"></div></div>
   </div>
 
-  <main>
-    <!-- Hero -->
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content reveal">
-          <span class="hero-label">Hello, My Name Is</span>
-          <h1 class="hero-name">Selvendran<br>Palanisamy</h1>
-          <p class="hero-role">I'm a <span id="typewriter"></span><span class="cursor-blink">|</span></p>
-          <div class="hero-social">
-            <a href="https://github.com/selvendran254" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+  <div class="desktop" id="desktop">
+    <div class="wallpaper" id="wallpaper"></div>
+    <div class="wallpaper-overlay" id="wallpaperOverlay"></div>
+
+    <!-- Menu Bar -->
+    <header class="menu-bar">
+      <div class="menu-left">
+        <button class="menu-apple" id="appleMenuBtn" aria-label="Apple menu">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        </button>
+        <span class="menu-active-app">Finder</span>
+        <button class="menu-mobile-btn" id="mobileMenuBtn" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <nav class="menu-items">
+          <button class="menu-item" data-open="about">About Me</button>
+          <button class="menu-item" data-open="projects">Projects</button>
+          <button class="menu-item" data-open="skills">Skills</button>
+          <button class="menu-item" data-open="certificates">Certificates</button>
+          <button class="menu-item" data-open="contact">Contact</button>
+        </nav>
+      </div>
+      <div class="menu-right">
+        <button class="menu-status" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="menu-status" id="wallpaperBtn" aria-label="Change wallpaper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        </button>
+        <span class="menu-status" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+        </span>
+        <span class="menu-status" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2"/></svg>
+        </span>
+        <span class="menu-clock" id="menuClock"></span>
+      </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="dropdown mobile-nav" id="mobileNav">
+      <button data-open="about">About Me</button>
+      <button data-open="projects">Projects</button>
+      <button data-open="skills">Skills</button>
+      <button data-open="certificates">Certificates</button>
+      <button data-open="contact">Contact</button>
+      <button data-open="terminal">Terminal</button>
+    </div>
+
+    <!-- Apple Dropdown -->
+    <div class="dropdown" id="appleDropdown">
+      <button data-open="about">About This Mac</button>
+      <button data-open="terminal">Terminal</button>
+      <hr />
+      <button id="restartBtn">Restart</button>
+    </div>
+
+    <!-- Wallpaper Picker -->
+    <div class="dropdown wallpaper-picker" id="wallpaperPicker">
+      <p class="dropdown-title">Desktop Background</p>
+      <div class="wp-categories">
+        <button class="wp-cat active" data-cat="all">All</button>
+        <button class="wp-cat" data-cat="nature">Nature</button>
+        <button class="wp-cat" data-cat="city">City</button>
+        <button class="wp-cat" data-cat="abstract">Abstract</button>
+        <button class="wp-cat" data-cat="dark">Dark</button>
+      </div>
+      <div class="wallpaper-options" id="wallpaperOptions"></div>
+      <div class="wp-controls">
+        <label class="wp-control">
+          <span>Blur</span>
+          <input type="range" id="wpBlur" min="0" max="20" value="0" />
+        </label>
+        <label class="wp-control">
+          <span>Dim</span>
+          <input type="range" id="wpDim" min="0" max="60" value="0" />
+        </label>
+        <label class="wp-control wp-toggle">
+          <input type="checkbox" id="wpAuto" />
+          <span>Auto change</span>
+        </label>
+        <button class="wp-random" id="wpRandom">Random</button>
+        <label class="wp-upload-btn">
+          <input type="file" id="wpUpload" accept="image/jpeg,image/png,image/webp" hidden />
+          Upload Photo
+        </label>
+      </div>
+    </div>
+
+    <!-- Desktop Icons -->
+    <div class="desktop-icons">
+      <button class="desktop-icon" data-open="about">
+        <span class="icon-box blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
+        <span class="icon-label">About Me</span>
+      </button>
+      <button class="desktop-icon" data-open="projects">
+        <span class="icon-box yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
+        <span class="icon-label">Projects</span>
+      </button>
+      <button class="desktop-icon" data-open="skills">
+        <span class="icon-box gray"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></span>
+        <span class="icon-label">Skills</span>
+      </button>
+      <button class="desktop-icon" data-open="certificates">
+        <span class="icon-box red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></span>
+        <span class="icon-label">Certificates</span>
+      </button>
+      <button class="desktop-icon" data-open="contact">
+        <span class="icon-box green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+        <span class="icon-label">Contact</span>
+      </button>
+      <button class="desktop-icon" data-open="terminal">
+        <span class="icon-box purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></span>
+        <span class="icon-label">Terminal</span>
+      </button>
+      <a class="desktop-icon" href="assets/selvendran.pdf" download="Selvendran_Palanisamy_Resume.pdf">
+        <span class="icon-box orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+        <span class="icon-label">Resume</span>
+      </a>
+    </div>
+
+    <!-- Welcome Widget -->
+    <div class="welcome-widget">
+      <p class="welcome-time" id="welcomeTime"></p>
+      <h1>Selvendran Palanisamy</h1>
+      <p class="welcome-role"><span id="typewriter"></span><span class="cursor-blink">|</span></p>
+    </div>
+
+    <!-- Windows -->
+    <div class="windows-layer" id="windowsLayer">
+
+      <!-- About Window -->
+      <div class="window" id="win-about" data-app="about" style="--wx:50%;--wy:55%;--ww:680px">
+        <div class="win-header" data-drag>
+          <div class="traffic-lights">
+            <button class="tl red" data-action="close" aria-label="Close"></button>
+            <button class="tl yellow" data-action="minimize" aria-label="Minimize"></button>
+            <button class="tl green" data-action="maximize" aria-label="Maximize"></button>
+          </div>
+          <span class="win-title">About Me</span>
+        </div>
+        <div class="win-body about-body">
+          <div class="about-profile">
+            <div class="about-avatar">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&q=80" alt="Selvendran Palanisamy" />
+            </div>
+            <div class="about-info">
+              <h2>Selvendran Palanisamy</h2>
+              <p class="about-role">Embedded Systems & IoT Developer</p>
+              <p class="about-loc">📍 Dindigul, Tamil Nadu — 624619</p>
+              <div class="about-stats">
+                <div><strong>4+</strong><span>Projects</span></div>
+                <div><strong>3</strong><span>Internships</span></div>
+                <div><strong>9</strong><span>Certifications</span></div>
+                <div><strong>2026</strong><span>Graduate</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="about-bio">Embedded Systems and IoT Developer skilled in microcontroller programming, sensor integration and hardware-software interfacing. Experienced with Arduino, RFID modules, ESP devices and IoT automation projects.</p>
+          <p class="about-bio">Strong problem-solver with hands-on project experience in embedded design and real-time systems. Passionate about automation, circuit design and embedded technology innovations.</p>
+          <div class="about-cards">
+            <div class="info-card">
+              <h4>Education</h4>
+              <p><strong>B.Tech Information Technology</strong></p>
+              <p>Christian College of Engineering and Technology</p>
+              <span>2022 — 2026 · Tamil Nadu</span>
+            </div>
+            <div class="info-card full">
+              <h4>Internships</h4>
+              <ul class="intern-list">
+                <li>
+                  <p><strong>Embedded Systems Intern</strong></p>
+                  <p>CodTech IT Solutions</p>
+                  <span>Aug 2025 · IoT & Microcontrollers</span>
+                </li>
+                <li>
+                  <p><strong>Intern — Embedded Systems & IoT</strong></p>
+                  <p>Skill Intern · Bangalore</p>
+                  <span>Oct 2025</span>
+                </li>
+                <li>
+                  <p><strong>DevOps Security Trainee</strong></p>
+                  <p>One27 Educational Services Private Limited · Dindigul</p>
+                  <span>Mar 2026</span>
+                </li>
+              </ul>
+            </div>
+            <div class="info-card full">
+              <h4>Certifications</h4>
+              <p class="cert-summary"><strong>9</strong> certifications from LinkedIn profile</p>
+              <ul class="cert-preview">
+                <li>Generative AI in Action — IBM SkillsBuild</li>
+                <li>Cloud Computing Fundamentals — IBM SkillsBuild</li>
+                <li>Introduction to Internet of Things — NPTEL</li>
+                <li>Build ChatGPT-like Search Using RAG — Coding Ninjas</li>
+              </ul>
+              <button class="btn-open-certs" data-open="certificates">View All Certificates →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Window -->
+      <div class="window" id="win-projects" data-app="projects" style="--wx:52%;--wy:52%;--ww:720px">
+        <div class="win-header" data-drag>
+          <div class="traffic-lights">
+            <button class="tl red" data-action="close"></button>
+            <button class="tl yellow" data-action="minimize"></button>
+            <button class="tl green" data-action="maximize"></button>
+          </div>
+          <span class="win-title">Projects</span>
+        </div>
+        <div class="win-body">
+          <div class="win-toolbar">
+            <span>4 items</span>
+            <a href="https://github.com/selvendran254?tab=repositories" target="_blank" rel="noopener noreferrer" class="toolbar-link">View on GitHub →</a>
+          </div>
+          <div class="projects-grid">
+            <a href="https://github.com/selvendran254/Smart-Home-Automation-Using-IoT" target="_blank" rel="noopener noreferrer" class="project-item">
+              <div class="project-img">
+                <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop&q=80" alt="Smart Home Automation Using IoT" loading="lazy" />
+              </div>
+              <div class="project-meta">
+                <h3>Smart Home Automation Using IoT</h3>
+                <span>IoT · ESP8266</span>
+              </div>
             </a>
-            <a href="https://linkedin.com/in/selvendran-p" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <a href="https://github.com/selvendran254/-Cell-Phone-Controlled-Robotic-Vehicle" target="_blank" rel="noopener noreferrer" class="project-item">
+              <div class="project-img">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08f7881a?w=600&h=400&fit=crop&q=80" alt="Cell Phone Controlled Robotic Vehicle" loading="lazy" />
+              </div>
+              <div class="project-meta">
+                <h3>Cell Phone Controlled Robotic Vehicle</h3>
+                <span>Arduino · Bluetooth</span>
+              </div>
             </a>
-            <a href="mailto:selvendranapalanisamy@gmail.com" aria-label="Email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="https://github.com/selvendran254/Library-Automation-Using-RFID" target="_blank" rel="noopener noreferrer" class="project-item">
+              <div class="project-img">
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270aa7?w=600&h=400&fit=crop&q=80" alt="Library Automation Using RFID" loading="lazy" />
+              </div>
+              <div class="project-meta">
+                <h3>Library Automation Using RFID</h3>
+                <span>RFID · Automation</span>
+              </div>
             </a>
-            <a href="https://wa.me/919025773867" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <a href="https://github.com/selvendran254/smart-home" target="_blank" rel="noopener noreferrer" class="project-item">
+              <div class="project-img">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&q=80" alt="Smart Home Web Dashboard" loading="lazy" />
+              </div>
+              <div class="project-meta">
+                <h3>Smart Home Web Dashboard</h3>
+                <span>HTML · JavaScript</span>
+              </div>
             </a>
           </div>
-          <div class="hero-btns">
-            <a href="assets/selvendran.pdf" class="btn-outline-sm" download="Selvendran_Palanisamy_Resume.pdf">Download CV</a>
-            <a href="#projects" class="btn-outline-sm">View Work</a>
-          </div>
-        </div>
-        <div class="hero-image reveal">
-          <div class="hero-image-wrap">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=750&fit=crop&q=80" alt="Selvendran Palanisamy" />
-            <div class="hero-image-overlay"></div>
-          </div>
         </div>
       </div>
-    </section>
 
-    <!-- Services -->
-    <section id="services" class="section">
-      <div class="container">
-        <div class="section-top reveal">
-          <div class="section-heading">
-            <span class="section-num">01.</span>
-            <h2 class="section-title">Services</h2>
-            <span class="section-bg-text">Services</span>
+      <!-- Skills Window -->
+      <div class="window" id="win-skills" data-app="skills" style="--wx:48%;--wy:50%;--ww:640px">
+        <div class="win-header" data-drag>
+          <div class="traffic-lights">
+            <button class="tl red" data-action="close"></button>
+            <button class="tl yellow" data-action="minimize"></button>
+            <button class="tl green" data-action="maximize"></button>
           </div>
-          <a href="#projects" class="btn-view-all">View All Projects</a>
+          <span class="win-title">Skills & Services</span>
         </div>
-        <div class="services-grid">
-          <article class="service-card active reveal">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+        <div class="win-body">
+          <h3 class="section-label">Technical Skills</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>C</span><span>Java</span><span>Arduino</span>
+            <span>ESP8266</span><span>RFID</span><span>IoT</span><span>GitHub</span>
+            <span>VS Code</span><span>Bluetooth</span><span>NumPy</span><span>Pandas</span>
+            <span>Linux</span><span>Docker</span><span>Git</span><span>Bash</span>
+            <span>CI/CD</span><span>DevOps</span><span>Cybersecurity</span><span>Cloud</span>
+          </div>
+          <h3 class="section-label">DevOps & Security</h3>
+          <div class="skill-tags skill-tags-alt">
+            <span>DevSecOps</span><span>Network Security</span><span>Linux Admin</span>
+            <span>Containerization</span><span>Automation</span><span>Monitoring</span>
+          </div>
+          <h3 class="section-label">Services</h3>
+          <div class="services-list">
+            <div class="service-item">
+              <div class="service-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div>
+              <div>
+                <h4>IoT & Embedded Systems</h4>
+                <p>Smart home automation, sensor integration, ESP8266 & Arduino-based real-time solutions.</p>
+              </div>
             </div>
-            <h3>IoT & Embedded Systems</h3>
-            <p>Smart home automation, sensor integration, ESP8266 & Arduino-based real-time embedded solutions.</p>
-          </article>
-          <article class="service-card reveal">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <div class="service-item">
+              <div class="service-icon yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div>
+              <div>
+                <h4>Hardware-Software Integration</h4>
+                <p>Microcontroller programming, RFID modules, Bluetooth control & circuit-level interfacing.</p>
+              </div>
             </div>
-            <h3>Hardware-Software Integration</h3>
-            <p>Microcontroller programming, RFID modules, Bluetooth control & circuit-level hardware interfacing.</p>
-          </article>
-          <article class="service-card reveal">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <div class="service-item">
+              <div class="service-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+              <div>
+                <h4>Programming & Automation</h4>
+                <p>Python, C, Java development with automation workflows and data handling.</p>
+              </div>
             </div>
-            <h3>Programming & Automation</h3>
-            <p>Python, C, Java development with automation workflows, data handling using NumPy & Pandas.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats">
-      <div class="container stats-grid">
-        <div class="stat-item reveal">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-          </div>
-          <span class="stat-num" data-count="4">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Projects</span>
-        </div>
-        <div class="stat-item reveal">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-          </div>
-          <span class="stat-num" data-count="1">0</span>
-          <span class="stat-label">Internship</span>
-        </div>
-        <div class="stat-item reveal">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-          </div>
-          <span class="stat-num" data-count="4">0</span>
-          <span class="stat-label">Certifications</span>
-        </div>
-        <div class="stat-item reveal">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
-          </div>
-          <span class="stat-num" data-count="2026">2026</span>
-          <span class="stat-label">B.Tech IT Graduate</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-top reveal">
-          <div class="section-heading">
-            <span class="section-num">02.</span>
-            <h2 class="section-title">Projects</h2>
-            <span class="section-bg-text">Projects</span>
-          </div>
-          <a href="https://github.com/selvendran254?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-view-all">View All on GitHub</a>
-        </div>
-        <div class="projects-grid">
-          <a href="https://github.com/selvendran254/Smart-Home-Automation-Using-IoT" target="_blank" rel="noopener noreferrer" class="project-card reveal">
-            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?w=500&h=350&fit=crop&q=80')">
-              <span class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
-            </div>
-            <h3>Smart Home Automation Using IoT</h3>
-            <span class="project-tag">IoT · ESP8266</span>
-          </a>
-          <a href="https://github.com/selvendran254/-Cell-Phone-Controlled-Robotic-Vehicle" target="_blank" rel="noopener noreferrer" class="project-card reveal">
-            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1535378620166-27370829422e?w=500&h=350&fit=crop&q=80')">
-              <span class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
-            </div>
-            <h3>Cell Phone Controlled Robotic Vehicle</h3>
-            <span class="project-tag">Arduino · Bluetooth</span>
-          </a>
-          <a href="https://github.com/selvendran254/Library-Automation-Using-RFID" target="_blank" rel="noopener noreferrer" class="project-card reveal">
-            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1524995998258-699c1c2c7e98?w=500&h=350&fit=crop&q=80')">
-              <span class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
-            </div>
-            <h3>Library Automation Using RFID</h3>
-            <span class="project-tag">RFID · Automation</span>
-          </a>
-          <a href="https://github.com/selvendran254/smart-home" target="_blank" rel="noopener noreferrer" class="project-card reveal">
-            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=350&fit=crop&q=80')">
-              <span class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
-            </div>
-            <h3>Smart Home Web Dashboard</h3>
-            <span class="project-tag">HTML · JavaScript</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section section-dark">
-      <div class="container about-grid">
-        <div class="reveal">
-          <div class="section-heading section-heading-left">
-            <span class="section-num">03.</span>
-            <h2 class="section-title">About Me</h2>
-            <span class="section-bg-text">About</span>
-          </div>
-          <p class="about-text">Embedded Systems and IoT Developer skilled in microcontroller programming, sensor integration and hardware-software interfacing. Experienced with Arduino, RFID modules, ESP devices and IoT automation projects.</p>
-          <p class="about-text">Strong problem-solver with hands-on project experience in embedded design and real-time systems. Passionate about automation, circuit design and embedded technology innovations.</p>
-          <p class="about-location">📍 Dindigul, Tamil Nadu — 624619</p>
-        </div>
-        <div class="about-cards reveal">
-          <div class="about-card">
-            <h4>Education</h4>
-            <p><strong>B.Tech Information Technology</strong></p>
-            <p>Christian College of Engineering and Technology</p>
-            <span class="about-meta">2022 — 2026 · Tamil Nadu</span>
-          </div>
-          <div class="about-card">
-            <h4>Internship</h4>
-            <p><strong>Embedded Systems Intern</strong></p>
-            <p>CodTech IT Solutions</p>
-            <span class="about-meta">Aug 2025 · IoT & Microcontrollers</span>
-          </div>
-          <div class="about-card">
-            <h4>Certifications</h4>
-            <ul class="cert-list">
-              <li>Generative AI in Action — IBM SkillsBuild</li>
-              <li>Embedded System with IoT — Skill Intern</li>
-              <li>Arduino Project — Simplilearn SkillUp</li>
-              <li>Tech Job Simulation — Deloitte Forage</li>
-            </ul>
-          </div>
-          <div class="about-card skills-card">
-            <h4>Skills</h4>
-            <div class="skill-tags">
-              <span>Python</span><span>C</span><span>Java</span><span>Arduino</span>
-              <span>ESP8266</span><span>RFID</span><span>IoT</span><span>GitHub</span>
-              <span>VS Code</span><span>Bluetooth</span>
+            <div class="service-item">
+              <div class="service-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div>
+                <h4>DevOps & Security</h4>
+                <p>Linux administration, CI/CD pipelines, Docker, cloud basics and security best practices.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-top reveal">
-          <div class="section-heading">
-            <span class="section-num">04.</span>
-            <h2 class="section-title">Contact</h2>
-            <span class="section-bg-text">Contact</span>
+      <!-- Certificates Window -->
+      <div class="window" id="win-certificates" data-app="certificates" style="--wx:50%;--wy:52%;--ww:760px">
+        <div class="win-header" data-drag>
+          <div class="traffic-lights">
+            <button class="tl red" data-action="close"></button>
+            <button class="tl yellow" data-action="minimize"></button>
+            <button class="tl green" data-action="maximize"></button>
           </div>
+          <span class="win-title">Certificates</span>
         </div>
-        <div class="contact-grid reveal">
-          <div class="contact-info">
+        <div class="win-body cert-body">
+          <div class="cert-stats-bar">
+            <div class="cert-stat-pill"><strong id="certTotalCount">9</strong><span>Total</span></div>
+            <div class="cert-stat-pill highlight"><strong id="certOuterCount">9</strong><span>Outer College</span></div>
+            <div class="cert-stat-pill"><strong id="certCollegeCount">0</strong><span>College</span></div>
+          </div>
+          <div class="cert-tabs">
+            <button class="cert-tab active" data-tab="all">All (9)</button>
+            <button class="cert-tab" data-tab="outer">Outer College (9)</button>
+            <button class="cert-tab" data-tab="college">College</button>
+          </div>
+          <div class="cert-search-wrap">
+            <input type="text" id="certSearch" class="cert-search" placeholder="Search certificates..." />
+          </div>
+          <div class="cert-list" id="certList"></div>
+          <p class="cert-note">Certificates synced from <a href="https://www.linkedin.com/in/selvendran-p-398b061b8/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></p>
+        </div>
+      </div>
+
+      <!-- Contact Window -->
+      <div class="window" id="win-contact" data-app="contact" style="--wx:50%;--wy:54%;--ww:660px">
+        <div class="win-header" data-drag>
+          <div class="traffic-lights">
+            <button class="tl red" data-action="close"></button>
+            <button class="tl yellow" data-action="minimize"></button>
+            <button class="tl green" data-action="maximize"></button>
+          </div>
+          <span class="win-title">Contact</span>
+        </div>
+        <div class="win-body contact-body">
+          <div class="contact-left">
             <h3>Let's work together</h3>
             <p>Have a project in mind? Feel free to reach out anytime.</p>
             <div class="contact-links">
-              <a href="mailto:selvendranapalanisamy@gmail.com">selvendranapalanisamy@gmail.com</a>
-              <a href="tel:+919025773867">+91 9025773867</a>
-              <a href="https://wa.me/919025773867" target="_blank" rel="noopener noreferrer">WhatsApp Me</a>
-              <a href="assets/selvendran.pdf" download="Selvendran_Palanisamy_Resume.pdf">Download Resume</a>
+              <a href="mailto:selvendranapalanisamy@gmail.com">✉ selvendranapalanisamy@gmail.com</a>
+              <a href="tel:+919025773867">📞 +91 9025773867</a>
+              <a href="https://wa.me/919025773867" target="_blank" rel="noopener noreferrer">💬 WhatsApp Me</a>
+              <a href="assets/selvendran.pdf" download="Selvendran_Palanisamy_Resume.pdf">📄 Download Resume</a>
+            </div>
+            <div class="contact-social">
+              <a href="https://github.com/selvendran254" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+              <a href="https://linkedin.com/in/selvendran-p" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
             </div>
           </div>
-          <form id="contactForm" class="contact-form">
-            <div class="form-row">
-              <input type="text" name="name" placeholder="Your Name" required />
-              <input type="email" name="email" placeholder="Your Email" required />
-            </div>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn-talk btn-full">Send Message</button>
+          <form id="contactForm" class="contact-form" novalidate>
+            <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+            <input type="email" name="email" placeholder="Your Email" required autocomplete="email" />
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn-send" id="formSubmitBtn">Send Message</button>
           </form>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>&copy; 2025 Selvendran Palanisamy. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="https://github.com/selvendran254" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/selvendran-p" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <!-- Terminal Window -->
+      <div class="window terminal-window" id="win-terminal" data-app="terminal" style="--wx:55%;--wy:58%;--ww:600px">
+        <div class="win-header" data-drag>
+          <div class="traffic-lights">
+            <button class="tl red" data-action="close"></button>
+            <button class="tl yellow" data-action="minimize"></button>
+            <button class="tl green" data-action="maximize"></button>
+          </div>
+          <span class="win-title">Terminal — selvendran@portfolio</span>
+        </div>
+        <div class="win-body terminal-body" id="terminalBody">
+          <div class="terminal-output" id="terminalOutput"></div>
+          <div class="terminal-input-row">
+            <span class="terminal-prompt">selvendran@portfolio ~ %</span>
+            <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" />
+          </div>
+        </div>
       </div>
+
     </div>
-  </footer>
 
-  <button class="back-top" id="backTop" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
+    <!-- Dock -->
+    <nav class="dock" id="dock">
+      <button class="dock-app active" data-open="about" aria-label="About Me">
+        <span class="dock-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
+        <span class="dock-dot"></span>
+      </button>
+      <button class="dock-app" data-open="projects" aria-label="Projects">
+        <span class="dock-icon yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
+        <span class="dock-dot"></span>
+      </button>
+      <button class="dock-app" data-open="skills" aria-label="Skills">
+        <span class="dock-icon gray"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg></span>
+        <span class="dock-dot"></span>
+      </button>
+      <button class="dock-app" data-open="certificates" aria-label="Certificates">
+        <span class="dock-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></span>
+        <span class="dock-dot"></span>
+      </button>
+      <button class="dock-app" data-open="contact" aria-label="Contact">
+        <span class="dock-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+        <span class="dock-dot"></span>
+      </button>
+      <button class="dock-app" data-open="terminal" aria-label="Terminal">
+        <span class="dock-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></span>
+        <span class="dock-dot"></span>
+      </button>
+      <a class="dock-app" href="assets/selvendran.pdf" download="Selvendran_Palanisamy_Resume.pdf" aria-label="Resume">
+        <span class="dock-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+      </a>
+      <span class="dock-sep"></span>
+      <a class="dock-app" href="https://github.com/selvendran254" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <span class="dock-icon dark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></span>
+      </a>
+      <a class="dock-app" href="https://linkedin.com/in/selvendran-p" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <span class="dock-icon linkedin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+      </a>
+      <a class="dock-app" href="https://wa.me/919025773867" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <span class="dock-icon whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span>
+      </a>
+    </nav>
+  </div>
 
-  <a href="https://wa.me/919025773867" target="_blank" rel="noopener noreferrer" class="float-wa" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-  </a>
-
+  <script src="js/certificates.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
