@@ -4,480 +4,271 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Selvendran Palanisamy | Embedded Systems & IoT Developer</title>
-  <meta name="description" content="Portfolio of Selvendran Palanisamy — Embedded Systems & IoT Developer from Dindigul, Tamil Nadu. Arduino, ESP8266, RFID, smart home automation projects." />
-  <meta name="keywords" content="Selvendran Palanisamy, Embedded Systems, IoT Developer, Arduino, ESP8266, RFID, Dindigul, Portfolio" />
-  <meta name="author" content="Selvendran Palanisamy" />
-  <meta name="theme-color" content="#0f0c29" />
+  <meta name="description" content="Portfolio of Selvendran Palanisamy — Embedded Systems & IoT Developer from Dindigul, Tamil Nadu." />
+  <meta name="theme-color" content="#121212" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="apple-touch-icon" href="assets/favicon.svg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Selvendran Palanisamy | Embedded Systems & IoT Developer" />
-  <meta property="og:description" content="Embedded Systems & IoT Developer skilled in Arduino, ESP8266, RFID and automation projects. View my portfolio and projects." />
-  <meta property="og:url" content="https://selvendran254.github.io/portfolio/" />
-  <meta property="og:locale" content="en_IN" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Selvendran Palanisamy | IoT Developer" />
-  <meta name="twitter:description" content="Embedded Systems & IoT Developer — Arduino, ESP8266, RFID projects." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Custom Cursor -->
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
-
-  <!-- Scroll Progress -->
   <div class="scroll-progress" aria-hidden="true"></div>
 
-  <!-- Background -->
-  <div class="bg-gradient"></div>
-  <div class="orbs" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="orb orb-4"></div>
-  </div>
-  <canvas id="particles" aria-hidden="true"></canvas>
-
-  <!-- Navbar -->
-  <nav class="navbar glass-nav" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>SP<span class="logo-bracket">/&gt;</span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
-        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
-        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#home" class="logo">Selvendra</a>
+      <nav class="nav" id="nav">
+        <a href="#home" class="nav-link active" data-section="home">Home</a>
+        <a href="#services" class="nav-link" data-section="services">Services</a>
+        <a href="#about" class="nav-link" data-section="about">About</a>
+        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#contact" class="btn-talk">Let's Talk</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <ul class="mobile-nav-links">
-      <li><a href="#hero" class="mobile-nav-link">Home</a></li>
-      <li><a href="#about" class="mobile-nav-link">About</a></li>
-      <li><a href="#education" class="mobile-nav-link">Education</a></li>
-      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
-      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-    </ul>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </div>
 
   <main>
     <!-- Hero -->
-    <section id="hero" class="section hero-section">
-      <div class="glass-card hero-card reveal">
-        <div class="hero-avatar-wrap">
-          <div class="avatar-glow"></div>
-          <div class="hero-avatar">
-            <span>SP</span>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="hero-label">Hello, My Name Is</span>
+          <h1 class="hero-name">Selvendran<br>Palanisamy</h1>
+          <p class="hero-role">I'm a <span id="typewriter"></span><span class="cursor-blink">|</span></p>
+          <div class="hero-social">
+            <a href="https://github.com/selvendran254" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/selvendran-p" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:selvendranapalanisamy@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+            <a href="https://wa.me/919025773867" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            </a>
+          </div>
+          <div class="hero-btns">
+            <a href="assets/selvendran.pdf" class="btn-outline-sm" download="Selvendran_Palanisamy_Resume.pdf">Download CV</a>
+            <a href="#projects" class="btn-outline-sm">View Work</a>
           </div>
         </div>
-        <p class="hero-greeting">Hello, I'm</p>
-        <h1 class="hero-name">
-          <span class="word" style="--i:0">Selvendran</span>
-          <span class="word" style="--i:1">Palanisamy</span>
-        </h1>
-        <p class="hero-role"><span id="typewriter"></span><span class="typewriter-cursor">|</span></p>
-        <p class="hero-location">📍 Dindigul, Tamil Nadu</p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-glow">View Projects</a>
-          <a href="#contact" class="btn btn-glow btn-outline">Contact Me</a>
-          <a href="assets/selvendran.pdf" class="btn btn-glow btn-resume" download="Selvendran_Palanisamy_Resume.pdf">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download Resume
-          </a>
-          <a href="https://wa.me/919025773867?text=Hi%20Selvendran%2C%20I%20saw%20your%20portfolio!" target="_blank" rel="noopener noreferrer" class="btn btn-glow btn-whatsapp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-            WhatsApp Me
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section">
-      <div class="section-header reveal">
-        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-        <div class="title-underline"></div>
-      </div>
-      <div class="glass-card about-card reveal">
-        <div class="about-content">
-          <p>
-            Embedded Systems and IoT Developer skilled in microcontroller programming, sensor integration
-            and hardware-software interfacing. Experienced with Arduino, RFID modules, ESP devices and
-            IoT automation projects.
-          </p>
-          <p>
-            Strong problem-solver with hands-on project experience in embedded design and real-time systems.
-            Passionate about automation, circuit design and embedded technology innovations.
-          </p>
-        </div>
-        <div class="about-highlights">
-          <div class="highlight-item">
-            <span class="highlight-number">4</span>
-            <span class="highlight-label">Projects</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-number">4</span>
-            <span class="highlight-label">Certifications</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-number">B.Tech</span>
-            <span class="highlight-label">IT (2026)</span>
-          </div>
-        </div>
-        <div class="about-experience glass-inner">
-          <h3>Internship</h3>
-          <div class="experience-item">
-            <div class="exp-header">
-              <strong>Embedded Systems Intern</strong>
-              <span class="exp-date">Aug 2025</span>
-            </div>
-            <p class="exp-company">CodTech IT Solutions</p>
-            <p>Worked on embedded programming, IoT device control, and sensor-based automation with microcontrollers and ESP modules.</p>
+        <div class="hero-image reveal">
+          <div class="hero-image-wrap">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=750&fit=crop&q=80" alt="Selvendran Palanisamy" />
+            <div class="hero-image-overlay"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="section">
-      <div class="section-header reveal">
-        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
-        <div class="title-underline"></div>
-      </div>
-      <div class="education-grid">
-        <div class="glass-card education-card reveal">
-          <div class="edu-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="section-heading">
+            <span class="section-num">01.</span>
+            <h2 class="section-title">Services</h2>
+            <span class="section-bg-text">Services</span>
           </div>
-          <div class="edu-content">
-            <span class="edu-date">2022 — 2026</span>
-            <h3 class="edu-degree">B.Tech in Information Technology</h3>
-            <p class="edu-school">Christian College of Engineering and Technology</p>
-            <p class="edu-location">Tamil Nadu, India</p>
-            <div class="edu-tags">
-              <span class="tag">Information Technology</span>
-              <span class="tag">Embedded Systems</span>
-              <span class="tag">IoT</span>
-            </div>
-          </div>
+          <a href="#projects" class="btn-view-all">View All Projects</a>
         </div>
-        <div class="glass-card education-card reveal">
-          <div class="edu-icon edu-icon-cert">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-          </div>
-          <div class="edu-content">
-            <span class="edu-date">2025</span>
-            <h3 class="edu-degree">Certifications</h3>
-            <ul class="cert-list">
-              <li>Generative AI in Action — <strong>IBM SkillsBuild</strong></li>
-              <li>Embedded System with IoT — <strong>Skill Intern</strong></li>
-              <li>Arduino Project (Basic) — <strong>Simplilearn SkillUp</strong></li>
-              <li>Technology Job Simulation — <strong>Deloitte Forage</strong></li>
-            </ul>
-          </div>
+        <div class="services-grid">
+          <article class="service-card active reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+            </div>
+            <h3>IoT & Embedded Systems</h3>
+            <p>Smart home automation, sensor integration, ESP8266 & Arduino-based real-time embedded solutions.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Hardware-Software Integration</h3>
+            <p>Microcontroller programming, RFID modules, Bluetooth control & circuit-level hardware interfacing.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Programming & Automation</h3>
+            <p>Python, C, Java development with automation workflows, data handling using NumPy & Pandas.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section">
-      <div class="section-header reveal">
-        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
-        <div class="title-underline"></div>
-      </div>
-      <div class="skills-grid">
-        <!-- Frontend / Programming -->
-        <div class="glass-card skill-category reveal" data-category="frontend">
-          <h3 class="category-title frontend-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Programming
-          </h3>
-          <div class="skill-pills">
-            <span class="pill pill-cyan">Python</span>
-            <span class="pill pill-cyan">C</span>
-            <span class="pill pill-cyan">Java</span>
+    <!-- Stats -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
           </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item">
-              <div class="skill-bar-header"><span>Python</span><span>90%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill fill-cyan" data-progress="90"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header"><span>C</span><span>85%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill fill-cyan" data-progress="85"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header"><span>Java</span><span>80%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill fill-cyan" data-progress="80"></div></div>
-            </div>
-          </div>
+          <span class="stat-num" data-count="4">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Projects</span>
         </div>
-
-        <!-- Backend / Embedded -->
-        <div class="glass-card skill-category reveal" data-category="backend">
-          <h3 class="category-title backend-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
-            Embedded & IoT
-          </h3>
-          <div class="skill-pills">
-            <span class="pill pill-purple">Arduino</span>
-            <span class="pill pill-purple">ESP8266</span>
-            <span class="pill pill-purple">RFID</span>
-            <span class="pill pill-purple">IoT</span>
-            <span class="pill pill-purple">Bluetooth</span>
+        <div class="stat-item reveal">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
           </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item">
-              <div class="skill-bar-header"><span>Arduino</span><span>92%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill fill-purple" data-progress="92"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header"><span>ESP8266 / IoT</span><span>88%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill fill-purple" data-progress="88"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header"><span>Sensor Integration</span><span>85%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill fill-purple" data-progress="85"></div></div>
-            </div>
-          </div>
+          <span class="stat-num" data-count="1">0</span>
+          <span class="stat-label">Internship</span>
         </div>
-
-        <!-- Tools -->
-        <div class="glass-card skill-category reveal" data-category="tools">
-          <h3 class="category-title tools-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            Tools & Libraries
-          </h3>
-          <div class="skill-pills">
-            <span class="pill pill-amber">GitHub</span>
-            <span class="pill pill-amber">VS Code</span>
-            <span class="pill pill-amber">NumPy</span>
-            <span class="pill pill-amber">Pandas</span>
-            <span class="pill pill-amber">AnalogRTCLib</span>
+        <div class="stat-item reveal">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
           </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item">
-              <div class="skill-bar-header"><span>GitHub</span><span>90%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill fill-amber" data-progress="90"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header"><span>VS Code</span><span>95%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill fill-amber" data-progress="95"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header"><span>NumPy / Pandas</span><span>82%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill fill-amber" data-progress="82"></div></div>
-            </div>
+          <span class="stat-num" data-count="4">0</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
           </div>
+          <span class="stat-num" data-count="2026">2026</span>
+          <span class="stat-label">B.Tech IT Graduate</span>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
     <section id="projects" class="section">
-      <div class="section-header reveal">
-        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
-        <div class="title-underline"></div>
-        <p class="section-subtitle reveal">All projects from my <a href="https://github.com/selvendran254?tab=repositories" target="_blank" rel="noopener noreferrer" class="github-profile-link">GitHub profile</a></p>
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="section-heading">
+            <span class="section-num">02.</span>
+            <h2 class="section-title">Projects</h2>
+            <span class="section-bg-text">Projects</span>
+          </div>
+          <a href="https://github.com/selvendran254?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-view-all">View All on GitHub</a>
+        </div>
+        <div class="projects-grid">
+          <a href="https://github.com/selvendran254/Smart-Home-Automation-Using-IoT" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?w=500&h=350&fit=crop&q=80')">
+              <span class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+            </div>
+            <h3>Smart Home Automation Using IoT</h3>
+            <span class="project-tag">IoT · ESP8266</span>
+          </a>
+          <a href="https://github.com/selvendran254/-Cell-Phone-Controlled-Robotic-Vehicle" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1535378620166-27370829422e?w=500&h=350&fit=crop&q=80')">
+              <span class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+            </div>
+            <h3>Cell Phone Controlled Robotic Vehicle</h3>
+            <span class="project-tag">Arduino · Bluetooth</span>
+          </a>
+          <a href="https://github.com/selvendran254/Library-Automation-Using-RFID" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1524995998258-699c1c2c7e98?w=500&h=350&fit=crop&q=80')">
+              <span class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+            </div>
+            <h3>Library Automation Using RFID</h3>
+            <span class="project-tag">RFID · Automation</span>
+          </a>
+          <a href="https://github.com/selvendran254/smart-home" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=350&fit=crop&q=80')">
+              <span class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+            </div>
+            <h3>Smart Home Web Dashboard</h3>
+            <span class="project-tag">HTML · JavaScript</span>
+          </a>
+        </div>
       </div>
-      <div class="filter-bar reveal">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="iot">IoT</button>
-        <button class="filter-btn" data-filter="arduino">Arduino</button>
-        <button class="filter-btn" data-filter="rfid">RFID</button>
-        <button class="filter-btn" data-filter="bluetooth">Bluetooth</button>
-        <button class="filter-btn" data-filter="web">Web</button>
-      </div>
-      <div class="projects-grid">
-        <article class="glass-card project-card reveal" data-tags="iot arduino esp8266" data-tilt>
-          <div class="project-image">
-            <div class="project-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-          </div>
-          <div class="project-content">
-            <span class="project-date">Jan 2025</span>
-            <h3 class="project-title">Smart Home Automation Using IoT</h3>
-            <p class="project-desc">Built an IoT smart home system with cloud-controlled appliances and sensor automation. Enabled remote monitoring, energy control, and safety automation.</p>
-            <div class="project-tags">
-              <span class="tag">IoT</span>
-              <span class="tag">ESP8266</span>
-              <span class="tag">Arduino</span>
-              <span class="tag">Cloud</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/selvendran254/Smart-Home-Automation-Using-IoT" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-              <a href="https://github.com/selvendran254/smart-home" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Live Demo">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
+    </section>
 
-        <article class="glass-card project-card reveal" data-tags="arduino bluetooth" data-tilt>
-          <div class="project-image">
-            <div class="project-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h5l3 3v5h-8V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+    <!-- About -->
+    <section id="about" class="section section-dark">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="section-heading section-heading-left">
+            <span class="section-num">03.</span>
+            <h2 class="section-title">About Me</h2>
+            <span class="section-bg-text">About</span>
+          </div>
+          <p class="about-text">Embedded Systems and IoT Developer skilled in microcontroller programming, sensor integration and hardware-software interfacing. Experienced with Arduino, RFID modules, ESP devices and IoT automation projects.</p>
+          <p class="about-text">Strong problem-solver with hands-on project experience in embedded design and real-time systems. Passionate about automation, circuit design and embedded technology innovations.</p>
+          <p class="about-location">📍 Dindigul, Tamil Nadu — 624619</p>
+        </div>
+        <div class="about-cards reveal">
+          <div class="about-card">
+            <h4>Education</h4>
+            <p><strong>B.Tech Information Technology</strong></p>
+            <p>Christian College of Engineering and Technology</p>
+            <span class="about-meta">2022 — 2026 · Tamil Nadu</span>
+          </div>
+          <div class="about-card">
+            <h4>Internship</h4>
+            <p><strong>Embedded Systems Intern</strong></p>
+            <p>CodTech IT Solutions</p>
+            <span class="about-meta">Aug 2025 · IoT & Microcontrollers</span>
+          </div>
+          <div class="about-card">
+            <h4>Certifications</h4>
+            <ul class="cert-list">
+              <li>Generative AI in Action — IBM SkillsBuild</li>
+              <li>Embedded System with IoT — Skill Intern</li>
+              <li>Arduino Project — Simplilearn SkillUp</li>
+              <li>Tech Job Simulation — Deloitte Forage</li>
+            </ul>
+          </div>
+          <div class="about-card skills-card">
+            <h4>Skills</h4>
+            <div class="skill-tags">
+              <span>Python</span><span>C</span><span>Java</span><span>Arduino</span>
+              <span>ESP8266</span><span>RFID</span><span>IoT</span><span>GitHub</span>
+              <span>VS Code</span><span>Bluetooth</span>
             </div>
           </div>
-          <div class="project-content">
-            <span class="project-date">May 2025</span>
-            <h3 class="project-title">Cell Phone Controlled Robotic Vehicle</h3>
-            <p class="project-desc">Developed a Bluetooth-controlled robotic vehicle using Arduino and motor drivers. Implemented directional movement control via mobile commands.</p>
-            <div class="project-tags">
-              <span class="tag">Arduino</span>
-              <span class="tag">Bluetooth</span>
-              <span class="tag">C</span>
-              <span class="tag">Motors</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/selvendran254/-Cell-Phone-Controlled-Robotic-Vehicle" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="glass-card project-card reveal" data-tags="rfid arduino iot" data-tilt>
-          <div class="project-image">
-            <div class="project-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-          </div>
-          <div class="project-content">
-            <span class="project-date">Jul 2025</span>
-            <h3 class="project-title">Library Automation Using RFID</h3>
-            <p class="project-desc">Designed an RFID-based system automating book issue and return processes. Improved accuracy and reduced manual effort in library operations.</p>
-            <div class="project-tags">
-              <span class="tag">RFID</span>
-              <span class="tag">Arduino</span>
-              <span class="tag">IoT</span>
-              <span class="tag">Automation</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/selvendran254/Library-Automation-Using-RFID" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="glass-card project-card reveal" data-tags="iot web html arduino" data-tilt>
-          <div class="project-image">
-            <div class="project-placeholder project-placeholder-web">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-          </div>
-          <div class="project-content">
-            <span class="project-date">Apr 2026</span>
-            <h3 class="project-title">Smart Home Web Dashboard</h3>
-            <p class="project-desc">HTML-based web dashboard for IoT smart home control. Remote appliance monitoring, sensor data display, and cloud-integrated automation interface.</p>
-            <div class="project-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">IoT</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/selvendran254/smart-home" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-              <a href="https://github.com/selvendran254/smart-home" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Live Demo">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-      <div class="projects-github-cta reveal">
-        <a href="https://github.com/selvendran254?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-glow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View All Repositories on GitHub
-        </a>
+        </div>
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="section">
-      <div class="section-header reveal">
-        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
-        <div class="title-underline"></div>
-      </div>
-      <div class="contact-wrapper reveal">
-        <div class="glass-card contact-info">
-          <h3>Let's Connect</h3>
-          <p>Have a project in mind or want to collaborate? Feel free to reach out!</p>
-          <div class="contact-details">
-            <a href="mailto:selvendranapalanisamy@gmail.com" class="contact-detail">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              selvendranapalanisamy@gmail.com
-            </a>
-            <a href="tel:+919025773867" class="contact-detail">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              +91 9025773867
-            </a>
-            <span class="contact-detail">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Dindigul - 624619
-            </span>
-            <a href="https://wa.me/919025773867?text=Hi%20Selvendran%2C%20I%20saw%20your%20portfolio!" target="_blank" rel="noopener noreferrer" class="contact-detail contact-whatsapp">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-              Chat on WhatsApp
-            </a>
-            <a href="assets/selvendran.pdf" class="contact-detail contact-resume" download="Selvendran_Palanisamy_Resume.pdf">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download Resume (PDF)
-            </a>
-          </div>
-          <div class="social-links">
-            <a href="https://github.com/selvendran254" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/selvendran-p" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="mailto:selvendranapalanisamy@gmail.com" class="social-btn" aria-label="Email">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a>
-            <a href="https://wa.me/919025773867?text=Hi%20Selvendran%2C%20I%20saw%20your%20portfolio!" target="_blank" rel="noopener noreferrer" class="social-btn social-whatsapp" aria-label="WhatsApp">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-            </a>
+      <div class="container">
+        <div class="section-top reveal">
+          <div class="section-heading">
+            <span class="section-num">04.</span>
+            <h2 class="section-title">Contact</h2>
+            <span class="section-bg-text">Contact</span>
           </div>
         </div>
-        <div class="glass-card contact-form-card">
-          <form id="contactForm" novalidate>
-            <div class="form-group">
-              <input type="text" id="name" name="name" required placeholder=" " autocomplete="name" />
-              <label for="name">Your Name</label>
+        <div class="contact-grid reveal">
+          <div class="contact-info">
+            <h3>Let's work together</h3>
+            <p>Have a project in mind? Feel free to reach out anytime.</p>
+            <div class="contact-links">
+              <a href="mailto:selvendranapalanisamy@gmail.com">selvendranapalanisamy@gmail.com</a>
+              <a href="tel:+919025773867">+91 9025773867</a>
+              <a href="https://wa.me/919025773867" target="_blank" rel="noopener noreferrer">WhatsApp Me</a>
+              <a href="assets/selvendran.pdf" download="Selvendran_Palanisamy_Resume.pdf">Download Resume</a>
             </div>
-            <div class="form-group">
-              <input type="email" id="email" name="email" required placeholder=" " autocomplete="email" />
-              <label for="email">Your Email</label>
+          </div>
+          <form id="contactForm" class="contact-form">
+            <div class="form-row">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input type="email" name="email" placeholder="Your Email" required />
             </div>
-            <div class="form-group">
-              <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-              <label for="message">Your Message</label>
-            </div>
-            <button type="submit" class="btn btn-submit">
-              <span>Send Message</span>
-            </button>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn-talk btn-full">Send Message</button>
           </form>
         </div>
       </div>
@@ -485,17 +276,21 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 Selvendran Palanisamy. Built with passion for embedded systems.</p>
+    <div class="container footer-inner">
+      <p>&copy; 2025 Selvendran Palanisamy. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/selvendran254" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/selvendran-p" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/919025773867?text=Hi%20Selvendran%2C%20I%20saw%20your%20portfolio!" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  <a href="https://wa.me/919025773867" target="_blank" rel="noopener noreferrer" class="float-wa" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
   </a>
 
   <script src="js/main.js"></script>
