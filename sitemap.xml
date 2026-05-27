@@ -6,4 +6,5 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- Add second entry with custom domain URL after DNS is live -->
 </urlset>

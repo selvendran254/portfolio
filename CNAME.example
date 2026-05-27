@@ -1,0 +1,12 @@
+# Custom domain for GitHub Pages
+# 1. Copy this file to CNAME (remove .example)
+# 2. Replace with your domain:
+# www.selvendran.dev
+# 3. GitHub repo → Settings → Pages → Custom domain → enter same domain
+# 4. DNS at your registrar:
+#    CNAME  www  →  selvendran254.github.io
+#    OR A records for apex (@) → 185.199.108.153 (and .154, .155, .156)
+# 5. Enable "Enforce HTTPS" in GitHub Pages settings (SSL auto ~24h)
+# 6. Set CUSTOM_DOMAIN in js/config.js to match
+
+www.example.com

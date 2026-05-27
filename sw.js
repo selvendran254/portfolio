@@ -1,48 +1,42 @@
-const CACHE = 'portfolio-v7';
+const CACHE = 'portfolio-images-v2';
+
+const IMAGE_ASSETS = [
+  './assets/favicon.svg',
+  './assets/selvendran.webp',
+  './assets/selvendran.jpg',
+  './assets/projects/smart-home-iot.webp',
+  './assets/projects/robotic-vehicle.webp',
+  './assets/projects/library-rfid.webp',
+  './assets/projects/smart-dashboard.webp'
+];
 
 self.addEventListener('install', e => {
-  self.skipWaiting();
+  e.waitUntil(
+    caches.open(CACHE).then(c => c.addAll(IMAGE_ASSETS)).then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', e => {
   e.waitUntil(
-    caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))).then(() => self.clients.claim())
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+    ).then(() => self.clients.claim())
   );
 });
-
-function isFreshAsset(url) {
-  return /\.(html?|js|css|webmanifest)(\?|$)/i.test(url.pathname) || url.pathname.endsWith('/portfolio/') || url.pathname.endsWith('/portfolio');
-}
 
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
-  if (!url.pathname.includes('/portfolio')) return;
-
-  if (isFreshAsset(url)) {
-    e.respondWith(
-      fetch(e.request)
-        .then(res => {
-          if (res.ok) {
-            const copy = res.clone();
-            caches.open(CACHE).then(c => c.put(e.request, copy));
-          }
-          return res;
-        })
-        .catch(() => caches.match(e.request))
-    );
-    return;
-  }
+  if (!/\.(webp|jpg|jpeg|png|svg|ico|woff2?)$/i.test(url.pathname)) return;
 
   e.respondWith(
-    caches.match(e.request).then(cached =>
-      cached || fetch(e.request).then(res => {
-        if (res.ok) {
-          const copy = res.clone();
-          caches.open(CACHE).then(c => c.put(e.request, copy));
-        }
-        return res;
-      })
+    caches.open(CACHE).then(cache =>
+      cache.match(e.request).then(cached =>
+        cached || fetch(e.request).then(res => {
+          if (res.ok) cache.put(e.request, res.clone());
+          return res;
+        }).catch(() => cached)
+      )
     )
   );
 });

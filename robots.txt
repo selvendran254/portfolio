@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://selvendran254.github.io/portfolio/sitemap.xml
+# After custom domain: update to https://yourdomain.com/sitemap.xml

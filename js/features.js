@@ -277,7 +277,11 @@ function initImageSkeletons() {
   setTimeout(() => UISound.boot(), 1800);
 })();
 
-/* ===== PWA — disabled until cache issues resolved ===== */
-/* Service worker removed to prevent stale JS cache */
+/* ===== PWA (images-only cache — JS/HTML always fresh) ===== */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js?v=9').catch(() => {});
+  });
+}
 
 initImageSkeletons();
