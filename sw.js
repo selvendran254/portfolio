@@ -1,4 +1,4 @@
-const CACHE = 'portfolio-v4';
+const CACHE = 'portfolio-v5';
 const ASSETS = [
   './',
   './index.html',
@@ -11,6 +11,10 @@ const ASSETS = [
   './js/features.js',
   './assets/favicon.svg',
   './assets/selvendran.jpg',
+  './assets/projects/smart-home-iot.jpg',
+  './assets/projects/robotic-vehicle.jpg',
+  './assets/projects/library-rfid.jpg',
+  './assets/projects/smart-dashboard.jpg',
   './manifest.webmanifest'
 ];
 
