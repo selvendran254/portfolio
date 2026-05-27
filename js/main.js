@@ -650,8 +650,8 @@ document.getElementById('contactForm')?.addEventListener('submit', async e => {
   const dock = document.getElementById('dock');
   if (!dock) return;
 
-  const MAX_SCALE = 1.85;
-  const RANGE = 140;
+  const MAX_SCALE = 1.65;
+  const RANGE = 120;
 
   function magnify(clientX) {
     const items = [...dock.querySelectorAll('.dock-app')];

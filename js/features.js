@@ -154,6 +154,7 @@ function initImageSkeletons() {
 
   function open() {
     overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
     input.value = '';
     filter('');
     setTimeout(() => input.focus(), 50);
@@ -162,6 +163,7 @@ function initImageSkeletons() {
 
   function close() {
     overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
   }
 
   window.openSpotlight = open;
