@@ -463,6 +463,80 @@ if (localStorage.getItem('theme') === 'dark') {
   document.documentElement.dataset.theme = 'dark';
 }
 
+/* ===== Terminal Games ===== */
+function startTerminalQuiz(print) {
+  const questions = [
+    { q: 'Which chip is common for WiFi IoT?', a: ['Arduino UNO', 'ESP8266', '8051'], c: 1 },
+    { q: 'RFID stands for?', a: ['Radio Frequency ID', 'Random File IO', 'Remote Firmware'], c: 0 },
+    { q: 'Best language for quick IoT prototyping?', a: ['Python/C', 'COBOL', 'Fortran'], c: 0 }
+  ];
+  let i = 0;
+  window._quizScore = 0;
+  const ask = () => {
+    if (i >= questions.length) {
+      print('Quiz complete! Score: ' + window._quizScore + '/' + questions.length, 'info');
+      window.terminalGameHandler = null;
+      return;
+    }
+    const q = questions[i];
+    print(`Q${i + 1}: ${q.q}<br>a) ${q.a[0]}  b) ${q.a[1]}  c) ${q.a[2]}`, 'out');
+  };
+  window.terminalGameHandler = key => {
+    const k = key.toLowerCase();
+    if (!['a', 'b', 'c'].includes(k)) return true;
+    const pick = k.charCodeAt(0) - 97;
+    if (pick === questions[i].c) { window._quizScore++; print('Correct! ✓', 'info'); }
+    else print('Wrong. Answer: ' + String.fromCharCode(97 + questions[i].c) + ') ' + questions[i].a[questions[i].c], 'err');
+    i++;
+    ask();
+    return true;
+  };
+  ask();
+}
+
+function startTerminalSnake(print) {
+  const W = 14, H = 8;
+  let snake = [{ x: 3, y: 4 }, { x: 2, y: 4 }, { x: 1, y: 4 }];
+  let dir = { x: 1, y: 0 };
+  let food = { x: 8, y: 4 };
+  let alive = true;
+  const randFood = () => {
+    do { food = { x: Math.floor(Math.random() * W), y: Math.floor(Math.random() * H) }; }
+    while (snake.some(s => s.x === food.x && s.y === food.y));
+  };
+  const render = () => {
+    const grid = Array.from({ length: H }, () => Array(W).fill('·'));
+    grid[food.y][food.x] = '◆';
+    snake.forEach((s, i) => { grid[s.y][s.x] = i === 0 ? '●' : '○'; });
+    print('<pre class="neo snake-grid">' + grid.map(r => r.join(' ')).join('\n') + '</pre>', 'out');
+  };
+  const step = () => {
+    if (!alive) return;
+    const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+    if (head.x < 0 || head.y < 0 || head.x >= W || head.y >= H || snake.some(s => s.x === head.x && s.y === head.y)) {
+      alive = false;
+      print('Game over! Score: ' + (snake.length - 3), 'err');
+      window.terminalGameHandler = null;
+      return;
+    }
+    snake.unshift(head);
+    if (head.x === food.x && head.y === food.y) { randFood(); print('Yum! Score: ' + (snake.length - 3), 'info'); }
+    else snake.pop();
+    render();
+  };
+  window.terminalGameHandler = key => {
+    const k = key.toLowerCase();
+    if (k === 'q') { alive = false; print('Snake quit.', 'info'); window.terminalGameHandler = null; return true; }
+    const map = { w: { x: 0, y: -1 }, s: { x: 0, y: 1 }, a: { x: -1, y: 0 }, d: { x: 1, y: 0 } };
+    if (map[k]) {
+      const nd = map[k];
+      if (!(snake.length > 1 && nd.x === -dir.x && nd.y === -dir.y)) { dir = nd; step(); }
+    }
+    return true;
+  };
+  render();
+}
+
 /* ===== Terminal ===== */
 (function () {
   const output = document.getElementById('terminalOutput');
@@ -532,11 +606,80 @@ LinkedIn: linkedin.com/in/selvendran-p`;
     blog() {
       openWindow('blog');
       return 'Opening blog window...';
+    },
+
+    neofetch() {
+      return `<pre class="neo">selvendran@portfolio
+──────────────────────────────
+OS: macOS Portfolio Web
+Host: selvendran254.github.io
+Kernel: Embedded Systems & IoT
+Shell: portfolio-terminal v1.2
+CPU: Arduino · ESP8266 · RFID
+Memory: 4 projects · 9 certs</pre>`;
+    },
+
+    fortune() {
+      const tips = [
+        'The best code is no code — but IoT needs both hardware and software.',
+        'Debug with printf before you debug with oscilloscope.',
+        'An ESP8266 a day keeps manual switches away.',
+        'Commit early, deploy often, test on real hardware.',
+        'RFID: Radio Frequency I Dream... of automated libraries.',
+        'Your portfolio is your runtime resume.'
+      ];
+      return '🥠 ' + tips[Math.floor(Math.random() * tips.length)];
+    },
+
+    cowsay(msg) {
+      const text = (msg || 'Moo! I am a cloud-connected cow.').slice(0, 60);
+      const pad = ' '.repeat(text.length);
+      return `<pre class="neo"> ${pad.replace(/ /g, '_')}
+&lt; ${text} &gt;
+ ${pad.replace(/ /g, '-')}
+        \\   ^__^
+         \\  (oo)\\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||</pre>`;
+    },
+
+    date() { return new Date().toString(); },
+
+    matrix() {
+      document.getElementById('matrixRain')?.classList.add('active');
+      setTimeout(() => document.getElementById('matrixRain')?.classList.remove('active'), 8000);
+      return 'Wake up, Neo... Matrix mode activated for 8 seconds.';
+    },
+
+    hack() {
+      return '<span class="info">[████████████████████] 100%</span><br>Access granted. Just kidding — ethical hacking only. 🔐';
+    },
+
+    coffee() {
+      return 'HTTP 418 ☕ — I\'m a teapot. Brew some coffee and check your ESP8266 serial monitor.';
+    },
+
+    repos() {
+      return 'GitHub: github.com/selvendran254 — type <span class="cmd">open projects</span>';
+    },
+
+    quiz() {
+      startTerminalQuiz(print);
+      return 'Embedded Quiz started! Answer with a, b, or c.';
+    },
+
+    snake() {
+      startTerminalSnake(print);
+      return 'Snake started! WASD to move · Q to quit';
+    },
+
+    konami() {
+      document.body.classList.add('konami-fx');
+      setTimeout(() => document.body.classList.remove('konami-fx'), 6000);
+      return '🎮 Konami code hint: ↑↑↓↓←→←→BA';
     }
   };
-
-  if (typeof TERMINAL_EASTER !== 'undefined') Object.assign(commands, TERMINAL_EASTER);
-  if (window.TERMINAL_EASTER) Object.assign(commands, window.TERMINAL_EASTER);
 
   const CMD_ALIASES = { coesay: 'cowsay', neofetech: 'neofetch' };
 
@@ -567,7 +710,11 @@ LinkedIn: linkedin.com/in/selvendran-p`;
       return;
     }
 
-    if (command === 'open' && arg) {
+    if (command === 'open') {
+      if (!arg) {
+        print('Usage: open [about|projects|skills|certificates|blog|contact|terminal]', 'info');
+        return;
+      }
       const target = arg.toLowerCase().split(/\s+/)[0];
       if (['about', 'projects', 'skills', 'certificates', 'blog', 'contact', 'terminal'].includes(target)) {
         openWindow(target);
@@ -602,8 +749,8 @@ LinkedIn: linkedin.com/in/selvendran-p`;
     }
   }
 
-  print('Welcome to Selvendran Portfolio Terminal v1.1', 'info');
-  print('Type <span class="cmd">help</span> for commands · try <span class="cmd">neofetch</span> or <span class="cmd">snake</span>', 'out');
+  print('Welcome to Selvendran Portfolio Terminal v1.2', 'info');
+  print('Type <span class="cmd">help</span> · try <span class="cmd">neofetch</span> <span class="cmd">snake</span> <span class="cmd">cowsay hi</span>', 'out');
 
   input.addEventListener('keydown', e => {
     if (window.terminalGameHandler && e.key.length === 1) {
