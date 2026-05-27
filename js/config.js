@@ -11,7 +11,7 @@ const CONTACT_EMAIL = 'selvendranapalanisamy@gmail.com';
 const CUSTOM_DOMAIN = '';
 
 /* Google Analytics 4 — e.g. 'G-XXXXXXXXXX' from analytics.google.com */
-const GA_MEASUREMENT_ID = '';
+const GA_MEASUREMENT_ID = 'G-N6360482DV';
 
 const GITHUB_PAGES_URL = 'https://selvendran254.github.io/portfolio/';
 
