@@ -639,28 +639,39 @@ document.getElementById('contactForm')?.addEventListener('submit', async e => {
   }
 });
 
-/* ===== Dock Magnify ===== */
+/* ===== Dock Magnify (macOS style) ===== */
 (function () {
   const dock = document.getElementById('dock');
   if (!dock) return;
 
-  dock.addEventListener('mousemove', e => {
+  const MAX_SCALE = 1.85;
+  const RANGE = 140;
+
+  function magnify(clientX) {
     const items = [...dock.querySelectorAll('.dock-app')];
     items.forEach(item => {
       const rect = item.getBoundingClientRect();
       const center = rect.left + rect.width / 2;
-      const dist = Math.abs(e.clientX - center);
-      const scale = Math.max(1, 1.4 - dist / 120);
-      const lift = Math.max(0, (scale - 1) * 20);
+      const dist = Math.abs(clientX - center);
+      const ratio = Math.max(0, 1 - dist / RANGE);
+      const scale = 1 + (MAX_SCALE - 1) * Math.pow(ratio, 1.35);
+      const lift = (scale - 1) * 36;
       item.style.transform = `translateY(-${lift}px) scale(${scale})`;
+      item.style.zIndex = String(Math.round(scale * 100));
     });
-  });
+  }
 
-  dock.addEventListener('mouseleave', () => {
+  function reset() {
     dock.querySelectorAll('.dock-app').forEach(item => {
       item.style.transform = '';
+      item.style.zIndex = '';
     });
-  });
+  }
+
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    dock.addEventListener('mousemove', e => magnify(e.clientX));
+    dock.addEventListener('mouseleave', reset);
+  }
 })();
 
 /* ===== Desktop Click — deselect ===== */
