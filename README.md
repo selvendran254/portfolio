@@ -40,10 +40,16 @@ git push origin main
 | `portfolio` | https://selvendran254.github.io/portfolio/ |
 | `selvendran254.github.io` | https://selvendran254.github.io/ |
 
-## Contact Form
+## Contact Form (Email)
 
-Messages are sent via [FormSubmit](https://formsubmit.co) to `selvendranapalanisamy@gmail.com`.  
-First submission triggers a one-time email confirmation — click the link to activate.
+Portfolio form sends messages to your Gmail via [Web3Forms](https://web3forms.com).
+
+1. Open https://web3forms.com
+2. Enter `selvendranapalanisamy@gmail.com`
+3. Copy the **Access Key** shown on screen
+4. Paste it in `js/config.js` → `WEB3FORMS_ACCESS_KEY`
+
+No activation email wait — the key appears instantly on the website.
 
 ## Project Structure
 

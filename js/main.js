@@ -566,7 +566,7 @@ LinkedIn: linkedin.com/in/selvendran-p`;
   });
 })();
 
-/* ===== Contact Form ===== */
+/* ===== Contact Form (email only) ===== */
 document.getElementById('contactForm')?.addEventListener('submit', async e => {
   e.preventDefault();
   const form = e.target;
@@ -575,9 +575,9 @@ document.getElementById('contactForm')?.addEventListener('submit', async e => {
   const name = form.name.value.trim();
   const email = form.email.value.trim();
   const message = form.message.value.trim();
-  const honey = form._honey?.value?.trim();
+  const emailTo = typeof CONTACT_EMAIL !== 'undefined' ? CONTACT_EMAIL : 'selvendranapalanisamy@gmail.com';
 
-  if (honey) return;
+  if (form.botcheck?.checked) return;
   if (!name || !email || !message) {
     if (statusEl) {
       statusEl.textContent = 'Please fill in all fields.';
@@ -586,39 +586,52 @@ document.getElementById('contactForm')?.addEventListener('submit', async e => {
     return;
   }
 
+  if (!WEB3FORMS_ACCESS_KEY) {
+    if (statusEl) {
+      statusEl.textContent = 'Email service is being set up. Please try again soon or mail ' + emailTo;
+      statusEl.className = 'form-status error';
+    }
+    return;
+  }
+
   if (submitBtn) submitBtn.disabled = true;
   if (statusEl) {
-    statusEl.textContent = 'Sending message...';
+    statusEl.textContent = 'Sending to your inbox...';
     statusEl.className = 'form-status sending';
   }
 
   try {
-    const res = await fetch('https://formsubmit.co/ajax/selvendranapalanisamy@gmail.com', {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json'
       },
       body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
         name,
         email,
         message,
-        _subject: `Portfolio Contact from ${name}`,
-        _template: 'table',
-        _captcha: 'false'
+        subject: `Portfolio Contact from ${name}`,
+        from_name: 'Portfolio Contact Form',
+        replyto: email
       })
     });
 
-    if (!res.ok) throw new Error('Request failed');
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok || !data.success) {
+      throw new Error(data.message || 'Request failed');
+    }
 
     if (statusEl) {
-      statusEl.textContent = 'Message sent! I will get back to you soon.';
+      statusEl.textContent = 'Message sent! Check your email inbox.';
       statusEl.className = 'form-status success';
     }
     form.reset();
   } catch {
     if (statusEl) {
-      statusEl.textContent = 'Could not send. Please email selvendranapalanisamy@gmail.com directly.';
+      statusEl.textContent = `Could not send. Please email ${emailTo} directly.`;
       statusEl.className = 'form-status error';
     }
   } finally {
