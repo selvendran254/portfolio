@@ -9,7 +9,13 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="author" content="Selvendran Palanisamy" />
+  <meta name="keywords" content="Selvendran Palanisamy, Embedded Systems, IoT Developer, Arduino, ESP8266, RFID, Portfolio, Dindigul, Tamil Nadu" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="googlebot" content="index, follow" />
   <link rel="canonical" href="https://selvendran254.github.io/portfolio/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+  <link rel="preload" href="css/style.css" as="style" />
+  <link rel="preload" href="assets/selvendran.webp" as="image" type="image/webp" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Selvendran Palanisamy | Portfolio" />
   <meta property="og:description" content="Embedded Systems & IoT Developer — projects, skills, certificates & contact." />
@@ -23,15 +29,40 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="assets/selvendran.jpg" />
   <link rel="stylesheet" href="css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Selvendran Palanisamy",
+    "url": "https://selvendran254.github.io/portfolio/",
+    "image": "https://selvendran254.github.io/portfolio/assets/selvendran.jpg",
+    "jobTitle": "Embedded Systems & IoT Developer",
+    "email": "selvendranapalanisamy@gmail.com",
+    "telephone": "+91-9025773867",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dindigul",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://github.com/selvendran254",
+      "https://linkedin.com/in/selvendran-p"
+    ],
+    "knowsAbout": ["Embedded Systems", "IoT", "Arduino", "ESP8266", "RFID", "DevOps", "Python"]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#desktop">Skip to desktop</a>
+  <div class="matrix-rain" id="matrixRain" aria-hidden="true"></div>
   <!-- Boot Screen -->
   <div class="boot-screen" id="bootScreen">
     <svg class="boot-apple" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
     <div class="boot-bar"><div class="boot-progress"></div></div>
   </div>
 
-  <div class="desktop" id="desktop">
+  <div class="desktop" id="desktop" role="application" aria-label="Selvendran Portfolio Desktop">
     <div class="wallpaper" id="wallpaper"></div>
     <div class="wallpaper-overlay" id="wallpaperOverlay"></div>
 
@@ -192,8 +223,11 @@
         </div>
         <div class="win-body about-body">
           <div class="about-profile">
-            <div class="about-avatar">
-              <img src="assets/selvendran.jpg" alt="Selvendran Palanisamy" width="200" height="200" />
+            <div class="about-avatar img-wrap">
+              <picture>
+                <source srcset="assets/selvendran.webp" type="image/webp" />
+                <img src="assets/selvendran.jpg" alt="Selvendran Palanisamy" width="200" height="200" fetchpriority="high" decoding="async" />
+              </picture>
             </div>
             <div class="about-info">
               <h2>Selvendran Palanisamy</h2>
@@ -269,7 +303,10 @@
           <div class="projects-grid">
             <a href="https://github.com/selvendran254/Smart-Home-Automation-Using-IoT" target="_blank" rel="noopener noreferrer" class="project-item">
               <div class="project-img img-wrap">
-                <img src="assets/projects/smart-home-iot.jpg" alt="Smart Home Automation Using IoT" loading="lazy" width="600" height="400" />
+                <picture>
+                  <source srcset="assets/projects/smart-home-iot.webp" type="image/webp" />
+                  <img src="assets/projects/smart-home-iot.jpg" alt="Smart Home Automation Using IoT" loading="lazy" decoding="async" width="600" height="400" />
+                </picture>
               </div>
               <div class="project-meta">
                 <h3>Smart Home Automation Using IoT</h3>
@@ -278,7 +315,10 @@
             </a>
             <a href="https://github.com/selvendran254/-Cell-Phone-Controlled-Robotic-Vehicle" target="_blank" rel="noopener noreferrer" class="project-item">
               <div class="project-img img-wrap">
-                <img src="assets/projects/robotic-vehicle.jpg" alt="Cell Phone Controlled Robotic Vehicle" loading="lazy" width="600" height="400" />
+                <picture>
+                  <source srcset="assets/projects/robotic-vehicle.webp" type="image/webp" />
+                  <img src="assets/projects/robotic-vehicle.jpg" alt="Cell Phone Controlled Robotic Vehicle" loading="lazy" decoding="async" width="600" height="400" />
+                </picture>
               </div>
               <div class="project-meta">
                 <h3>Cell Phone Controlled Robotic Vehicle</h3>
@@ -287,7 +327,10 @@
             </a>
             <a href="https://github.com/selvendran254/Library-Automation-Using-RFID" target="_blank" rel="noopener noreferrer" class="project-item">
               <div class="project-img img-wrap">
-                <img src="assets/projects/library-rfid.jpg" alt="Library Automation Using RFID" loading="lazy" width="600" height="400" />
+                <picture>
+                  <source srcset="assets/projects/library-rfid.webp" type="image/webp" />
+                  <img src="assets/projects/library-rfid.jpg" alt="Library Automation Using RFID" loading="lazy" decoding="async" width="600" height="400" />
+                </picture>
               </div>
               <div class="project-meta">
                 <h3>Library Automation Using RFID</h3>
@@ -296,7 +339,10 @@
             </a>
             <a href="https://github.com/selvendran254/smart-home" target="_blank" rel="noopener noreferrer" class="project-item">
               <div class="project-img img-wrap">
-                <img src="assets/projects/smart-dashboard.jpg" alt="Smart Home Web Dashboard" loading="lazy" width="600" height="400" />
+                <picture>
+                  <source srcset="assets/projects/smart-dashboard.webp" type="image/webp" />
+                  <img src="assets/projects/smart-dashboard.jpg" alt="Smart Home Web Dashboard" loading="lazy" decoding="async" width="600" height="400" />
+                </picture>
               </div>
               <div class="project-meta">
                 <h3>Smart Home Web Dashboard</h3>
@@ -537,6 +583,7 @@
   <script src="js/i18n.js"></script>
   <script src="js/blog.js"></script>
   <script src="js/certificates.js"></script>
+  <script src="js/easter.js"></script>
   <script src="js/main.js"></script>
   <script src="js/features.js"></script>
 </body>

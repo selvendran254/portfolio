@@ -1,4 +1,4 @@
-const CACHE = 'portfolio-v5';
+const CACHE = 'portfolio-v6';
 const ASSETS = [
   './',
   './index.html',
@@ -7,14 +7,22 @@ const ASSETS = [
   './js/i18n.js',
   './js/blog.js',
   './js/certificates.js',
+  './js/easter.js',
   './js/main.js',
   './js/features.js',
+  './robots.txt',
+  './sitemap.xml',
   './assets/favicon.svg',
   './assets/selvendran.jpg',
+  './assets/selvendran.webp',
   './assets/projects/smart-home-iot.jpg',
+  './assets/projects/smart-home-iot.webp',
   './assets/projects/robotic-vehicle.jpg',
+  './assets/projects/robotic-vehicle.webp',
   './assets/projects/library-rfid.jpg',
+  './assets/projects/library-rfid.webp',
   './assets/projects/smart-dashboard.jpg',
+  './assets/projects/smart-dashboard.webp',
   './manifest.webmanifest'
 ];
 

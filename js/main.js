@@ -483,7 +483,17 @@ if (localStorage.getItem('theme') === 'dark') {
   sudo      — Try it 😉
   open      — Usage: open [about|projects|skills|certificates|blog|contact]
   blog      — Open blog window
-  certificates — Show certificate summary`;
+  certificates — Show certificate summary
+  <span class="info">Easter eggs:</span>
+  neofetch  — System info card
+  fortune   — Random dev tip
+  cowsay    — ASCII cow (cowsay hello)
+  snake     — Play Snake (WASD)
+  quiz      — Embedded quiz game
+  matrix    — Matrix rain effect
+  hack      — Fake hack progress 😄
+  coffee    — HTTP 418 teapot
+  konami    — Konami code hint`;
     },
     about() {
       return `Selvendran Palanisamy
@@ -525,6 +535,8 @@ LinkedIn: linkedin.com/in/selvendran-p`;
     }
   };
 
+  if (typeof TERMINAL_EASTER !== 'undefined') Object.assign(commands, TERMINAL_EASTER);
+
   function print(text, cls = 'out') {
     const line = document.createElement('div');
     line.className = 'line ' + cls;
@@ -533,30 +545,30 @@ LinkedIn: linkedin.com/in/selvendran-p`;
     output.scrollTop = output.scrollHeight;
   }
 
-  print('Welcome to Selvendran Portfolio Terminal v1.0', 'info');
-  print('Type <span class="cmd">help</span> to see available commands.', 'out');
+  window.terminalPrint = print;
 
-  input.addEventListener('keydown', e => {
-    if (e.key !== 'Enter') return;
-    const cmd = input.value.trim();
-    input.value = '';
-    if (!cmd) return;
+  function runCommand(raw) {
+    const trimmed = raw.trim();
+    if (!trimmed) return;
+    print(`<span class="cmd">selvendran@portfolio ~ % ${trimmed}</span>`, 'cmd');
 
-    print(`<span class="cmd">selvendran@portfolio ~ % ${cmd}</span>`, 'cmd');
-
-    const [command, arg] = cmd.toLowerCase().split(/\s+/);
+    const parts = trimmed.split(/\s+/);
+    const command = parts[0].toLowerCase();
+    const arg = parts.slice(1).join(' ');
 
     if (command === 'clear') {
       output.innerHTML = '';
+      window.terminalGameHandler = null;
       return;
     }
 
     if (command === 'open' && arg) {
-      if (['about', 'projects', 'skills', 'certificates', 'blog', 'contact', 'terminal'].includes(arg)) {
-        openWindow(arg);
-        print(`Opening ${arg}...`, 'info');
+      const target = arg.toLowerCase().split(/\s+/)[0];
+      if (['about', 'projects', 'skills', 'certificates', 'blog', 'contact', 'terminal'].includes(target)) {
+        openWindow(target);
+        print(`Opening ${target}...`, 'info');
       } else {
-        print(`App "${arg}" not found.`, 'err');
+        print(`App "${target}" not found.`, 'err');
       }
       return;
     }
@@ -567,11 +579,38 @@ LinkedIn: linkedin.com/in/selvendran-p`;
       return;
     }
 
+    if (command === 'echo') {
+      print(arg || '', 'out');
+      return;
+    }
+
+    if (command === 'cowsay') {
+      print(commands.cowsay(arg), 'out');
+      return;
+    }
+
     if (commands[command]) {
-      print(commands[command]().replace(/\n/g, '<br>'), 'out');
+      const result = commands[command](arg);
+      if (result) print(String(result).replace(/\n/g, '<br>'), 'out');
     } else {
       print(`Command not found: ${command}. Type "help" for commands.`, 'err');
     }
+  }
+
+  print('Welcome to Selvendran Portfolio Terminal v1.0', 'info');
+  print('Type <span class="cmd">help</span> to see available commands.', 'out');
+
+  input.addEventListener('keydown', e => {
+    if (window.terminalGameHandler && e.key.length === 1) {
+      e.preventDefault();
+      window.terminalGameHandler(e.key);
+      return;
+    }
+
+    if (e.key !== 'Enter') return;
+    const cmd = input.value;
+    input.value = '';
+    runCommand(cmd);
   });
 })();
 
